@@ -4,14 +4,9 @@ import 'moment/locale/ru';
 
 moment.locale('ru');
 
-export default function withRightDateTime() {
-    return function (Component) {
-        return class extends React.Component {
-            render(){
-                const date = moment(this.props.date).startOf('minute').fromNow();
-
-                return <Component {...this.props} date={date} {...this.state}/>;
-            }
-        };
+export default function withRightDateTime(Component) {
+    return function (props) {
+        const date = moment(props.date).startOf('minute').fromNow();
+        return <Component {...props} date={date}/>;
     };
 }

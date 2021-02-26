@@ -2,7 +2,7 @@ import React from 'react';
 import DateTime from './DateTime';
 import withRightDateTime from "../hoc/withRightDateTime";
 
-const DateTimePretty = withRightDateTime()(DateTime);
+const DateTimePretty = withRightDateTime(DateTime);
 
 export default function Video(props) {
     return (
